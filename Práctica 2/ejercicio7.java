@@ -1,7 +1,7 @@
 package tp2.ejercicio7;
 import tp2.ejercicio1y2.*;
 public class ParcialArboles {
-	BinaryTree<Integer> arbol;
+	private BinaryTree<Integer> arbol;
 	
 	public ParcialArboles(BinaryTree<Integer> arbol){
 		this.arbol = arbol;
@@ -37,14 +37,13 @@ public class ParcialArboles {
 			if (arbol.hasRightChild()) {
 				hijosDer = contarNodosUnicos(arbol.getRightChild());
 			}
-			ok = (hijosIzq > hijosDer) ;
+			ok = (hijosIzq > hijosDer);
 		}
 		else {
 			if (arbol.hasLeftChild()) 
 				ok = recursivo(arbol.getLeftChild(), num);
 			if (!ok && arbol.hasRightChild())
 				ok = recursivo(arbol.getRightChild(), num);
-			
 		}
 		return ok;
 	}
@@ -64,5 +63,4 @@ public class ParcialArboles {
 		System.out.println(parArb.isLeftTree(3));
 		System.out.println(parArb.isLeftTree(5));
 	}
-
 }
